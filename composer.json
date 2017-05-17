@@ -1,41 +1,35 @@
 {
-    "name": "limenius/liform",
-    "description": "Library to transform Symfony Forms into Json Schema",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Nacho Martín",
-            "email": "nacho@limenius.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": { "Limenius\\Liform\\": "src/Limenius/Liform" }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Limenius\\Liform\\Tests\\": "tests/Limenius/Liform/Tests"
-        }
-    },
-    "require": {
-        "symfony/form": "~2.3|~3.0"
-    },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^2.5",
-        "escapestudios/symfony2-coding-standard": "^2.9",
-        "wimg/php-compatibility": "^7.0"
-    },
-    "scripts": {
-        "default-scripts": [
-            "rm -rf vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility; cp -rp vendor/wimg/php-compatibility vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility"
-        ],
-        "post-install-cmd": [
-            "@default-scripts"
-        ],
-        "post-update-cmd": [
-            "@default-scripts"
-        ],
-        "test": "phpunit",
-        "cs": "phpcs --standard=ruleset.xml -p"
+  "name" : "limenius/liform",
+  "description" : "Library to transform Symfony Forms into Json Schema",
+  "require" : {
+    "symfony/form" : "~2.3|~3.0"
+  },
+  "require-dev" : {
+    "squizlabs/php_codesniffer" : "^2.5",
+    "escapestudios/symfony2-coding-standard" : "^2.9",
+    "wimg/php-compatibility" : "dev-feature/fix-102-107-directory-layout"
+  },
+  "scripts" : {
+    "default-scripts" : [ "rm -rf vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility; cp -rp vendor/wimg/php-compatibility vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility" ],
+    "post-install-cmd" : [ "@default-scripts" ],
+    "post-update-cmd" : [ "@default-scripts" ],
+    "test" : "phpunit",
+    "cs" : "phpcs --standard=ruleset.xml -p"
+  },
+  "authors" : [ {
+    "name" : "Nacho Martín",
+    "email" : "nacho@limenius.com"
+  } ],
+  "autoload-dev" : {
+    "psr-4" : {
+      "Limenius\\Liform\\Tests\\" : "tests/Limenius/Liform/Tests"
     }
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Limenius\\Liform\\" : "src/Limenius/Liform"
+    }
+  },
+  "license" : "MIT",
+  "type" : "library"
 }
