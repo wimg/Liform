@@ -10,7 +10,7 @@
     "wimg/php-compatibility" : "dev-feature/fix-102-107-directory-layout"
   },
   "scripts" : {
-    "default-scripts" : [ "rm -rf vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility; cp -rp vendor/wimg/php-compatibility vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility" ],
+    "default-scripts" : [ "\"vendor/bin/phpcs\" --config-set installed_paths /vendor/wimg/php-compatibility" ],
     "post-install-cmd" : [ "@default-scripts" ],
     "post-update-cmd" : [ "@default-scripts" ],
     "test" : "phpunit",
